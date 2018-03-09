@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from .context import sample
-
+import sys
+sys.path.append('.')
 import unittest
 
 

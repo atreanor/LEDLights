@@ -1,26 +1,52 @@
-class LightTester:
-    ''' LightTester class '''
+
+
+class LightTest:
+    ''' LightTest class '''
+    
     lights = None
     
-    # creates instance of class, input N from parser to create 2d list
+    # class constructor creates instance of LightTest, input N to create 2d list
     def __init__(self, N):
         self.lights = [[0]*N for _ in range(N)]
-        self.N = N
+        self.size = N
+    # method to apply instructions to 2d list
+    def apply(self, instructions):
+        for line in instructions:
+            print(line)
+            if line != None:
+                cmd = line[1]        
+                x1,y1,x2,y2 = int(line[2]),int(line[3]),int(line[4]),int(line[5])
+                print(cmd, x1, y1, x2, y2)
+                # check boundaries of coordinates
+                if x1 < 0 or y1 < 0 or x2 > self.size or y2 > self.size:
+                    x1, y1, x2, y2 = coordCheck(x1, y1, x2, y2)
+                
+                if cmd == "turn on":
+                    self.lights[x1:x2+1, y1:y2+1] = 1
+                elif cmd == "turn off":
+                    self.lights[x1:x2+1, y1:y2+1] = 0
+                elif cmd == "switch":
+                    for i in self.lights[x1:x2+1, y1:y2+1]:
+                        if i == 1:
+                            i = 0
+                        elif i == 0:
+                            i = 1  
         
-    def apply(self, cmd):
+                    
+    def coordCheck(self, x1, y1, x2, y2):
+        if x1 < 0:
+            x1 = 0
+        if y1 < 0:
+            y1 = 0
+        if x2 > self.size:
+            x2 = self.size
+        if y2 > self.size:
+            y2 = self.size 
+        return x1, y1, x2, y2
         
-        if cmd is 'turn on':
-            #action
-            pass
-        elif cmd is 'turn off':
-            #action
-            pass
-        elif cmd is 'switch':
-            #action
-            pass
     
     def count(self):
-        ''' method to count the number of lights on 1 '''
+        ''' method to count the number of lights on (off = 0, on = 1) '''
         lightcount = 0
         rowCount = len(self.lights)
         columnCount = len(self.lights[0])
@@ -31,32 +57,4 @@ class LightTester:
                     lightcount+=1
                     
         return lightcount 
-    
-    
-    def input(self, fname):
-        fname = input('Enter filename: ')
-        if fname == "":
-            print('Error: please enter filename')
-        elif fname
-        
-    '''
-    """ The LEDLightsTester class creates an instance with a 2 
-    dimensional list of input size"""
-    lightList = None 
-    
-    def __init__(self, size):
-        # create class instance, and 2d list
-        self.lightList = [[0]*size for _ in range(size)]
-    
-    def apply(self, cmd):
-        if cmd is 'turn on':
-            
-        elif cmd is 'turn off':
-            #instructions
-        elif cmd is 'switch':
-            #instructions
-    def count(self):
-        return count '''
-
-    
     

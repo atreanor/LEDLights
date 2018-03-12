@@ -14,7 +14,7 @@ import urllib.request
 
 
 
-def parseFile(input):
+def parseFile1(input):
     #read from http uri
     pat = re.compile(".*(turn on|turn off|switch)\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*through\s*([+-]?\d+)\s*,\s*([+-]?\d+).*")   
     if input.startswith("http"):
@@ -71,6 +71,6 @@ def parsehttp(input):
         print(N, instructions)
         return N, instructions
 #parseFile('')   
-#parseFile('test_data.txt')   
-parseFile('http://claritytrec.ucd.ie/~alawlor/comp30670/input_assign3_b.txt') 
+parseFile1('test_data.txt')   
+#parseFile('http://claritytrec.ucd.ie/~alawlor/comp30670/input_assign3_b.txt') 
 

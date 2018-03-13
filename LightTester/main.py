@@ -10,9 +10,12 @@ import os
 import re
 from pprint import pprint
 import pytest
+import time 
+
 
 def main():
     '''main method'''
+    start_time = time.time()
     print('main method entered')
     #N, instructions = None, []
     
@@ -37,6 +40,7 @@ def main():
     
     #count and print lights on   
     print("Lights on: ", lights.count())
+    print("--- %s seconds ---" % (time.time() - start_time))
     return 0
 
 if __name__ == "__main__":

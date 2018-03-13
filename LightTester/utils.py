@@ -58,7 +58,7 @@ def regexConvert(buffer):
     return instructions
   
 
-def coordCheck(self, x1, y1, x2, y2):
+'''def coordCheck(self, x1, y1, x2, y2):
     if x1 < 0:
         x1 = 0
     if y1 < 0:
@@ -67,7 +67,7 @@ def coordCheck(self, x1, y1, x2, y2):
         x2 = self.size
     if y2 > self.size:
         y2 = self.size 
-        
+'''        
         
 #parseFile('http://claritytrec.ucd.ie/~alawlor/comp30670/input_assign3.txt')
 #parseFile('input_assign3.txt')

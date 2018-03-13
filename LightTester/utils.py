@@ -1,11 +1,9 @@
 # LightTester/utils.py
-'''
-@author: Alan
-'''
-import urllib.request 
-from pip._vendor.pyparsing import line
-help(urllib.request.urlopen)
-from pathlib import Path
+import sys 
+sys.path.append(".")
+import urllib.request
+#help(urllib.request.urlopen)
+#from pathlib import Path
 import re 
 import os
 
@@ -19,26 +17,24 @@ def parseFile(input):
         N = int(buffer[0])
         print('Buffer', N, buffer)
         instructions = regexConvert(buffer)
-        print('http', instructions)
+        print('http file read')
         return N, instructions
     else:
         # check if file exists
-        #my_file = Path(input)
-        #if my_file.isfile():
         if os.path.isfile(input):
             print('local file exits')
             # read whole file to buffer
             buffer = open(input).read().split("\n")
             N = int(buffer[0])
-            print('Buffer', buffer)
+            #print('Buffer', buffer)
             instructions = regexConvert(buffer)
             #N, instructions = None, []
-            print('local', instructions)
+            print('local file read')
             return N, instructions 
         else:
             print('Error: file not found')
-            
-    return 0,0
+            return 0,0
+    
 
 def regexConvert(buffer):
     # convert buffer data with regex 
@@ -50,9 +46,14 @@ def regexConvert(buffer):
         #instructions.append(result.group(1, 2, 3, 4, 5))
         
         regexLine = regex.match(buffer[i])
+        if regexLine:
         #regexLine1 = regexLine.group(1, 2, 3, 4, 5)
         # append data
-        instructions.append(regexLine)
+            r = list(regexLine.groups())
+            for i in range(1,5):
+                r[i] = int(r[i])
+            # r = [regexLine.group(x) for x in [1, 2, 3, 4, 5]]
+            instructions.append(r)
         #print(instructions)
     return instructions
   
@@ -69,7 +70,7 @@ def coordCheck(self, x1, y1, x2, y2):
         
         
 #parseFile('http://claritytrec.ucd.ie/~alawlor/comp30670/input_assign3.txt')
-parseFile('input_assign3.txt')
+#parseFile('input_assign3.txt')
 #parseFile('')
     
     

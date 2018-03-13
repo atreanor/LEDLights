@@ -3,8 +3,8 @@ import sys
 sys.path.append('.')
 
 import pytest
-from LightTester import LightTest
-from LightTester import utils
+from LightTester import *
+from utils import *
 
 def test_command_line_interface():
     ifile = "./data/test_data.txt"
@@ -18,4 +18,10 @@ def test_read_file():
     assert instructions == ['turn on 0,0 through 9,9\n', 'turn off 0,0 through 9,9\n', 
                             'switch 0,0 through 9,9\n', 'turn off 0,0 through 9,9\n', 
                             'turn on 2,2 through 7,7\n']
+
+def test_instruction_parsing():
+    ifile = "./data/test_data.txt"
+    N, instructions = utils.parseFile(ifile)
+    assert cmd == "turn on" or cmd == "turn off" or cmd == "switch"
+
      

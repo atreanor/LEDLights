@@ -23,15 +23,19 @@ class LightTest:
             cmd, x1, y1, x2, y2 = line
             print('L: {}'.format(line))
             if line != None:
+                x1, y1, x2, y2 = self.coordCheck(x1, y1, x2, y2)# new line
                 if cmd == "turn on":
-                   for i in range(x1, x2+1):
+                    #line.coordCheck()
+                    for i in range(x1, x2+1):
                        for j in range(y1, y2+1):
                            self.lights[i][j] = 1
                 elif cmd == "turn off":
+                    #line.coordCheck()
                     for i in range(x1, x2+1):
                         for j in range(y1, y2+1):
                             self.lights[i][j] = 0
                 elif cmd == "switch":
+                    #line.coordCheck()
                     for i in range(x1, x2+1):
                         for j in range(x1, x2+1):
                             if self.lights[i][j] == 0:

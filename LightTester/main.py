@@ -40,7 +40,7 @@ def main():
     
     #count and print lights on   
     print("Lights on: ", lights.count())
-    print("--- %s seconds ---" % (time.time() - start_time))
+    print("--- %s mins -" % int((time.time() - start_time)/60) + "-- %s secs ---" % int(time.time() - start_time))
     return 0
 
 if __name__ == "__main__":

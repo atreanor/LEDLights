@@ -17,7 +17,7 @@ def parseFile(input):
         N = int(buffer[0])
         # print('Buffer', N, buffer)
         instructions = regexConvert(buffer)
-        print('http file read')
+        print('2: http file parsed')
         return N, instructions
     else:
         # check if file exists
@@ -29,7 +29,7 @@ def parseFile(input):
             #print('Buffer', buffer)
             instructions = regexConvert(buffer)
             #N, instructions = None, []
-            print('local file read')
+            print('2: local file parsed')
             return N, instructions 
         else:
             print('Error: file not found')

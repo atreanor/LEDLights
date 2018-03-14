@@ -15,9 +15,7 @@ import time
 def main():
     '''main method'''
     start_time = time.time()
-    print('main method entered')
-    #N, instructions = None, []
-    
+        
     # read input from web or local file
     parser = argparse.ArgumentParser()
     parser.add_argument('--input', help='input help')
@@ -27,11 +25,11 @@ def main():
     
     # parse file to obtain N, instructions 
     N, instructions = parseFile(filename)
-    print('2: file parsed & regexed')
+    
     
     # create instance of class, N = 2d dimensions
     lights = LightTest(N)
-    print('3: class created')
+    print('3: class instance created')
     
     #pprint(LightTest)
     lights.apply(instructions)

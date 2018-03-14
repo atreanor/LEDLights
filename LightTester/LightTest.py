@@ -21,7 +21,7 @@ class LightTest:
     def apply(self, instructions):
         for line in instructions:
             cmd, x1, y1, x2, y2 = line
-            print('L: {}'.format(line))
+            # print('L: {}'.format(line))
             if line != None:
                 x1, y1, x2, y2 = self.coordCheck(x1, y1, x2, y2)# new line
                 if cmd == "turn on":

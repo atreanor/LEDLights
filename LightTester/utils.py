@@ -15,7 +15,7 @@ def parseFile(input):
         # read the whole file into a buffer
         buffer = req.read().decode('utf-8').split('\n')
         N = int(buffer[0])
-        print('Buffer', N, buffer)
+        # print('Buffer', N, buffer)
         instructions = regexConvert(buffer)
         print('http file read')
         return N, instructions

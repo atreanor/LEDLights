@@ -9,7 +9,6 @@ import urllib.request
 import os
 import re
 from pprint import pprint
-import pytest
 import time 
 
 
@@ -36,10 +35,10 @@ def main():
     
     #pprint(LightTest)
     lights.apply(instructions)
-    print('instructions applied')
+    print('4: instructions applied')
     
     #count and print lights on   
-    print("Lights on: ", lights.count())
+    print("5: Lights on: ", lights.count())
     print("--- %s mins -" % int((time.time() - start_time)/60) + "-- %s secs ---" % int(time.time() - start_time))
     return 0
 

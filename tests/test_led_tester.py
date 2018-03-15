@@ -27,7 +27,7 @@ def test_instruction_parsing():
   
 def test_coord_outside_parameters():
     lights = LightTest(5)
-    lights.apply("turn on 0,0 through 10,11")
+    lights.apply("turn on 0,0 through 9,11")
 assert ledTester.count() == 25
 
 def test_count():

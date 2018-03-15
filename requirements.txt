@@ -3,21 +3,28 @@ attrs==17.4.0
 binaryornot==0.4.4
 certifi==2018.1.18
 chardet==3.0.4
+click==6.7
+cookiecutter==1.6.0
+Flask==0.12.2
 future==0.16.0
 idna==2.6
 itsdangerous==0.24
 Jinja2==2.10
 jinja2-time==0.2.0
+-e git+https://github.com/atreanor/LEDLights.git@5ad6301e8f797ff3b40b9ebabc97fa6749741d76#egg=LEDLights
 MarkupSafe==1.0
+numpy==1.14.0
 pandas==0.22.0
 pluggy==0.6.0
 poyo==0.4.1
 py==1.5.2
+PyScaffold==3.0.1
 pytest==3.4.2
 python-dateutil==2.6.1
 pytz==2018.3
 requests==2.18.4
 six==1.11.0
+-e git+https://github.com/atreanor/systeminfo.git@8f31441df045a8c00deafb76cc48eab99ad51f81#egg=systeminfo
 urllib3==1.22
 Werkzeug==0.14.1
 whichcraft==0.4.1

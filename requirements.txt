@@ -26,5 +26,5 @@ requests==2.18.4
 six==1.11.0
 -e git+https://github.com/atreanor/systeminfo.git@8f31441df045a8c00deafb76cc48eab99ad51f81#egg=systeminfo
 urllib3==1.22
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 whichcraft==0.4.1

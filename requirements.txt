@@ -13,7 +13,7 @@ Jinja2==2.10
 jinja2-time==0.2.0
 -e git+https://github.com/atreanor/LEDLights.git@5ad6301e8f797ff3b40b9ebabc97fa6749741d76#egg=LEDLights
 MarkupSafe==1.0
-numpy==1.14.0
+numpy==1.22.0
 pandas==0.22.0
 pluggy==0.6.0
 poyo==0.4.1
